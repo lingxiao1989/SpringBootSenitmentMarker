@@ -1,6 +1,5 @@
 package com.java.springbootsenitmentmarker.dao;
 
-import com.java.springbootsenitmentmarker.entity.Twitter;
 import com.java.springbootsenitmentmarker.entity.twitter_info;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

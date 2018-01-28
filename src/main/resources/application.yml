@@ -1,9 +1,9 @@
 spring:
   datasource:
         driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://127.0.0.1:3306/twitter_test_data
-        username: root
-        password: 123456
+        url: jdbc:mysql://192.168.10.85:3306/twitter_data
+        username: caiji
+        password: cj%2018
 
   jpa:
     hibernate:

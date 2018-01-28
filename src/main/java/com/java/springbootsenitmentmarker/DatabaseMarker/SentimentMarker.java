@@ -1,7 +1,6 @@
 package com.java.springbootsenitmentmarker.DatabaseMarker;
 
 import com.java.springbootsenitmentmarker.dao.TwitterRepository;
-import com.java.springbootsenitmentmarker.entity.Twitter;
 import com.java.springbootsenitmentmarker.entity.twitter_info;
 import com.java.springbootsenitmentmarker.util.CoreNLP;
 import com.java.springbootsenitmentmarker.util.SentimentResult;
@@ -26,12 +25,16 @@ public class SentimentMarker implements ApplicationRunner {
         while(true) {
             try {
                 boolean UpdateAll = args.containsOption("UpdateAll");
-                List<String> autoId = args.getOptionValues("StartAfter");
+                boolean StartAfterId = args.containsOption("StartAfter");
+
                 if(UpdateAll) {
                     SentimentTotalUpdate();
                 }
-                else if(!autoId.isEmpty()) {
-                    SentimentUpdateAfterId(autoId.get(0));
+                else if(StartAfterId) {
+                    List<String> autoId = args.getOptionValues("StartAfter");
+                    if(!autoId.isEmpty()){
+                        SentimentUpdateAfterId(autoId.get(0));
+                    }
                 }
                 else{
                     SentimentPartialUpdate();
